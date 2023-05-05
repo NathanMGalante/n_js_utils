@@ -1,6 +1,6 @@
 let completerMap = {};
 
-let anyCompleterNumber = 0;
+let anyCompleterKeyNumber = 0;
 
 /**
  * @param {String} key The key
@@ -16,13 +16,13 @@ export const completer = (key = null) => {
   }).finally(() => {
     delete completerMap[key];
     if (key.includes("anyCompleterKey")) {
-      anyCompleterNumber--;
+      anyCompleterKeyNumber--;
     }
   });
 
   const object = { complete, completeError, future };
   if (key === null) {
-    key = "anyCompleterKey" + anyCompleterNumber++;
+    key = "anyCompleterKey" + anyCompleterKeyNumber++;
   }
   completerMap[key] = object;
   return completerMap[key];
