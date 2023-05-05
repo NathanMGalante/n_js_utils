@@ -13,12 +13,11 @@ export const completer = (key = null) => {
   future = new Promise((resolve, reject) => {
     complete = resolve;
     completeError = reject;
-  }).then((result) => {
+  }).finally(() => {
     delete completerMap[key];
     if (key.includes("anyCompleterKey")) {
       anyCompleterNumber--;
     }
-    return result;
   });
 
   const object = { complete, completeError, future };
