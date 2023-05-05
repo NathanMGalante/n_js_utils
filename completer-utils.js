@@ -1,6 +1,6 @@
-let anyCompleterNumber = 0;
-
 let completerMap = {};
+
+let anyCompleterNumber = 0;
 
 /**
  * @param {String} key The key
