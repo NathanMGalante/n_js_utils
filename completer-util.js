@@ -20,9 +20,6 @@ export const completer = (key = null) => {
     completeError = reject;
   }).finally(() => {
     delete completerMap[key];
-    if (key && key.includes("anyCompleterKey")) {
-      anyCompleterKeyNumber--;
-    }
   });
 
   const data = completerData(complete, completeError, future);
